@@ -1,5 +1,6 @@
 package model;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -8,9 +9,16 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 public class StudentDTO {
+    @XmlElement
     private String dni;
+    
+    @XmlElement
     private String name;
+    
+    @XmlElement
     private String lastName;
+    
+    @XmlElement
     private String eMail;
     
     public StudentDTO(){}

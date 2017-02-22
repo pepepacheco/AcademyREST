@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  */
 public class ConnectionDB {
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    private static final String DB_URL = "jdbc:mysql://35.163.178.255:3306/ServicioREST";
+    private static final String DB_URL = "jdbc:mysql://35.163.178.255:3306/ServicioREST?noAccessToProcedureBodies=true";
     private static final String USER = "dam";
     private static final String PASSWD = "dam";
     

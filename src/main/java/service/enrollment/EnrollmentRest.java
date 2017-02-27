@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package service;
+package service.enrollment;
 
 import java.util.List;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
-import model.EnrollmentDTO;
-import model.EnrollmentImpDAO;
-import model.EnrollmentOutputDTO;
+import model.enrollment.EnrollmentDTO;
+import model.enrollment.EnrollmentImpDAO;
+import model.enrollment.EnrollmentOutputDTO;
 
 /**
  *

@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package service;
+package service.subject;
 
 import java.util.List;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
-import model.SubjectDTO;
-import model.SubjectImpDAO;
+import model.subject.SubjectDTO;
+import model.subject.SubjectImpDAO;
 
 /**
  *

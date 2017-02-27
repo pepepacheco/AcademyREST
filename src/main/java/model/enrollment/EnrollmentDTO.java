@@ -1,4 +1,4 @@
-package model;
+package model.enrollment;
 
 import java.util.Date;
 import javax.xml.bind.annotation.XmlElement;

@@ -1,4 +1,4 @@
-package service;
+package service.enrollment;
 
 import java.util.List;
 import javax.ws.rs.Consumes;
@@ -12,8 +12,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import model.EnrollmentDTO;
-import model.EnrollmentOutputDTO;
+import model.enrollment.EnrollmentDTO;
+import model.enrollment.EnrollmentOutputDTO;
 
 /**
  *

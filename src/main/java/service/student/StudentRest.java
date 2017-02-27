@@ -1,10 +1,10 @@
-package service;
+package service.student;
 
 import java.util.List;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
-import model.StudentDTO;
-import model.StudentImpDAO;
+import model.student.StudentDTO;
+import model.student.StudentImpDAO;
 
 /**
  *

@@ -1,6 +1,6 @@
-package service;
+package service.student;
 import javax.ws.rs.Path;
-import model.StudentDTO;
+import model.student.StudentDTO;
 import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;

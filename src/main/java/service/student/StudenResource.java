@@ -29,9 +29,9 @@ public interface StudenResource {
     List<StudentDTO> getStudentByDni(@PathParam("dni") String dni);
     
     @GET
-    @Path("nombre/{nombre}")
+    @Path("name/{name}")
     @Produces({MediaType.APPLICATION_JSON})
-    List<StudentDTO> getStudentBy(@PathParam("nombre") String name);
+    List<StudentDTO> getStudentBy(@PathParam("name") String name);
     
     @POST
     @Consumes({MediaType.APPLICATION_JSON})

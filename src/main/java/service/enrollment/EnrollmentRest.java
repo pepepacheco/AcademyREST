@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package service.enrollment;
 
 import java.util.List;
@@ -16,7 +11,7 @@ import model.enrollment.EnrollmentOutputDTO;
  *
  * @author lolo y rafa
  */
-@Path("Matricula")
+@Path("enrollment")
 public class EnrollmentRest implements EnrollmentResource{
     EnrollmentImpDAO enrollmentDB = new EnrollmentImpDAO();
     

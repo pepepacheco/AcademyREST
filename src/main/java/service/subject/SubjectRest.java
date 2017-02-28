@@ -15,7 +15,7 @@ import model.subject.SubjectImpDAO;
  *
  * @author Lolo
  */
-@Path("Asignatura")
+@Path("subject")
 public class SubjectRest implements SubjectResource{
     SubjectImpDAO subjectDB = new SubjectImpDAO();
     

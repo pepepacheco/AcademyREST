@@ -10,7 +10,7 @@ import model.student.StudentImpDAO;
  *
  * @author Rafael Vargas del Moral
  */
-@Path("Alumno")
+@Path("student")
 public class StudentRest implements StudenResource {
     StudentImpDAO studentDB = new StudentImpDAO();
     

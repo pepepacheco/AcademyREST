@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author rafa
+ * @author Lolo y Rafa
  */
 @XmlRootElement
 public class EnrollmentDTO {

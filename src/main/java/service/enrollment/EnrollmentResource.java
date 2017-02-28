@@ -26,12 +26,12 @@ public interface EnrollmentResource {
     List<EnrollmentOutputDTO> getAllEnrollments();
         
     @GET
-    @Path("alumno/{dni}")
+    @Path("student/{dni}")
     @Produces({MediaType.APPLICATION_JSON})
     List<EnrollmentOutputDTO> getEnrollmentByStudentDNI(@PathParam("dni") String dni);
     
     @GET
-    @Path("asignatura/{name}")
+    @Path("subject/{name}")
     @Produces({MediaType.APPLICATION_JSON})
     List<EnrollmentOutputDTO> getEnrollmentBySubjectName(@PathParam("name") String name);
     

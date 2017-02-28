@@ -34,12 +34,12 @@ public interface SubjectResource {
     List<SubjectDTO> findSubjectById(@PathParam("id") int id);
     
     @GET
-    @Path("nombre/{name}")
+    @Path("name/{name}")
     @Produces({MediaType.APPLICATION_JSON})
     List<SubjectDTO> findSubjectByName(@PathParam("name") String name);
     
     @GET
-    @Path("ciclo/{cycle}")
+    @Path("cycle/{cycle}")
     @Produces({MediaType.APPLICATION_JSON})
     List<SubjectDTO> findSujectByCycle(@PathParam("cycle") String cycle);
     

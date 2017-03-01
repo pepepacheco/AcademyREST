@@ -32,13 +32,16 @@ public class StudentImpDAO implements StudentDAO {
                
             StudentDTO student;
             while (result.next()) {
+                int id;
                 String dni, name, lastName, email;
+                
+                id = result.getInt("ID");
                 dni = result.getString("DNI");
                 name = result.getString("Nombre");
                 lastName = result.getString("Apellidos");
                 email = result.getString("email");
                 
-                student = new StudentDTO(dni, name, lastName, email);
+                student = new StudentDTO(id, dni, name, lastName, email);
                 listStudents.add(student);
             }
         } catch (SQLException ex) {
@@ -48,24 +51,27 @@ public class StudentImpDAO implements StudentDAO {
     }
 
     @Override
-    public List<StudentDTO> findById(int id) {
+    public List<StudentDTO> findById(int idQuery) {
         List<StudentDTO> listStudents = new ArrayList<StudentDTO>();
         try {
             String query = "SELECT * FROM Alumno WHERE id = ?";
             PreparedStatement prepareStatement = CON.prepareStatement(query);
-            prepareStatement.setInt(1, id);
+            prepareStatement.setInt(1, idQuery);
             
             ResultSet result = prepareStatement.executeQuery();
             
             StudentDTO student;
             while (result.next()) {
+                int id;
                 String dni, name, lastName, email;
+                
+                id = result.getInt("ID");
                 dni = result.getString("DNI");
                 name = result.getString("Nombre");
                 lastName = result.getString("Apellidos");
                 email = result.getString("email");
                 
-                student = new StudentDTO(dni, name, lastName, email);
+                student = new StudentDTO(id, dni, name, lastName, email);
                 listStudents.add(student);
             }
             
@@ -87,13 +93,16 @@ public class StudentImpDAO implements StudentDAO {
             
             StudentDTO student;
             while (result.next()) {
+                int id;
                 String dni, name, lastName, email;
+                
+                id = result.getInt("ID");
                 dni = result.getString("DNI");
                 name = result.getString("Nombre");
                 lastName = result.getString("Apellidos");
                 email = result.getString("email");
                 
-                student = new StudentDTO(dni, name, lastName, email);
+                student = new StudentDTO(id, dni, name, lastName, email);
                 listStudents.add(student);
             }
             
@@ -115,13 +124,16 @@ public class StudentImpDAO implements StudentDAO {
             
             StudentDTO student;
             while (result.next()) {
+                int id;
                 String dni, name, lastName, email;
+                
+                id = result.getInt("ID");
                 dni = result.getString("DNI");
                 name = result.getString("Nombre");
                 lastName = result.getString("Apellidos");
                 email = result.getString("email");
                 
-                student = new StudentDTO(dni, name, lastName, email);
+                student = new StudentDTO(id, dni, name, lastName, email);
                 listStudents.add(student);
             }
             

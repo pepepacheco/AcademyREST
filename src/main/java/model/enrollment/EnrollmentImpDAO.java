@@ -28,23 +28,26 @@ public class EnrollmentImpDAO implements EnrollmentDAO{
         List<EnrollmentOutputDTO> listEnrollments = new ArrayList<EnrollmentOutputDTO>();
         try {
             Statement statement = CON.createStatement();
-            String query = "SELECT Alumno.Nombre, Alumno.Apellidos, Asignatura.Nombre \"Asignatura\", Matricula.fecha_inicio, " +
+            String query = "SELECT Alumno.ID \"studentId\", Alumno.Nombre, Alumno.Apellidos, Asignatura.ID \"subjectId\", Asignatura.Nombre \"Asignatura\", Matricula.fecha_inicio, " +
                 "Matricula.fecha_fin FROM Alumno, Asignatura, Matricula WHERE Alumno.ID = Matricula.ID_alumno " +
                 "AND Asignatura.ID = Matricula.ID_asignatura";
             ResultSet result = statement.executeQuery(query);
                
             EnrollmentOutputDTO enrollmentOut;
             while (result.next()) {
+                int studentId, subjectId;
                 String studentName, studentLastName, subject;
                 Date startDate, endDate;
                 
+                studentId = result.getInt("studentId");
                 studentName = result.getString("Alumno.Nombre");
                 studentLastName = result.getString("Alumno.Apellidos");
+                subjectId = result.getInt("subjectId");
                 subject = result.getString("Asignatura");
                 startDate = result.getDate("Matricula.fecha_inicio");
                 endDate = result.getDate("Matricula.fecha_fin");
                 
-                enrollmentOut = new EnrollmentOutputDTO(studentName, studentLastName, subject, startDate, endDate);
+                enrollmentOut = new EnrollmentOutputDTO(studentId, studentName, studentLastName, subjectId, subject, startDate, endDate);
                 listEnrollments.add(enrollmentOut);
             }
         } catch (SQLException ex) {
@@ -58,26 +61,30 @@ public class EnrollmentImpDAO implements EnrollmentDAO{
         List<EnrollmentOutputDTO> listEnrollment = new ArrayList<EnrollmentOutputDTO>();
         
         try {
-            String query = "SELECT Alumno.Nombre, Alumno.Apellidos, Asignatura.Nombre \"Asignatura\", Matricula.fecha_inicio, " +
-            "Matricula.fecha_fin FROM Alumno, Asignatura, Matricula WHERE Alumno.ID = Matricula.ID_alumno " +
-            "AND Asignatura.ID = Matricula.ID_asignatura AND Alumno.DNI = ?";
+            String query = "SELECT Alumno.ID \"studentId\", Alumno.Nombre, Alumno.Apellidos, Asignatura.ID \"subjectId\", Asignatura.Nombre \"Asignatura\", Matricula.fecha_inicio, " +
+                "Matricula.fecha_fin FROM Alumno, Asignatura, Matricula WHERE Alumno.ID = Matricula.ID_alumno " +
+                "AND Asignatura.ID = Matricula.ID_asignatura";
             
             PreparedStatement preparedStatement = CON.prepareStatement(query);
             preparedStatement.setString(1, dni);
             
             ResultSet result = preparedStatement.executeQuery();
             
+            EnrollmentOutputDTO enrollmentOut;
             while(result.next()) {
-                String nameStudent, lastNameStudent, nameSubject;
+                int studentId, subjectId;
+                String studentName, studentLastName, subject;
                 Date startDate, endDate;
                 
-                nameStudent = result.getString("Alumno.Nombre");
-                lastNameStudent = result.getString("Alumno.Apellidos");
-                nameSubject = result.getString("Asignatura");
+                studentId = result.getInt("studentId");
+                studentName = result.getString("Alumno.Nombre");
+                studentLastName = result.getString("Alumno.Apellidos");
+                subjectId = result.getInt("subjectId");
+                subject = result.getString("Asignatura");
                 startDate = result.getDate("Matricula.fecha_inicio");
                 endDate = result.getDate("Matricula.fecha_fin");
                 
-                EnrollmentOutputDTO enrollmentOut = new EnrollmentOutputDTO(nameStudent, lastNameStudent, nameSubject, startDate, endDate);
+                enrollmentOut = new EnrollmentOutputDTO(studentId, studentName, studentLastName, subjectId, subject, startDate, endDate);
                 listEnrollment.add(enrollmentOut);
             }
         } catch (SQLException ex) {
@@ -91,26 +98,30 @@ public class EnrollmentImpDAO implements EnrollmentDAO{
         List<EnrollmentOutputDTO> listEnrollment = new ArrayList<EnrollmentOutputDTO>();
         
         try {
-            String query = "SELECT Alumno.Nombre, Alumno.Apellidos, Asignatura.Nombre \"Asignatura\", Matricula.fecha_inicio, " +
-            "Matricula.fecha_fin FROM Alumno, Asignatura, Matricula WHERE Alumno.ID = Matricula.ID_alumno " +
-            "AND Asignatura.ID = Matricula.ID_asignatura AND Asignatura.Nombre = ?";
+            String query = "SELECT Alumno.ID \"studentId\", Alumno.Nombre, Alumno.Apellidos, Asignatura.ID \"subjectId\", Asignatura.Nombre \"Asignatura\", Matricula.fecha_inicio, " +
+                "Matricula.fecha_fin FROM Alumno, Asignatura, Matricula WHERE Alumno.ID = Matricula.ID_alumno " +
+                "AND Asignatura.ID = Matricula.ID_asignatura";
             
             PreparedStatement preparedStatement = CON.prepareStatement(query);
             preparedStatement.setString(1, name);
             
             ResultSet result = preparedStatement.executeQuery();
             
+            EnrollmentOutputDTO enrollmentOut;
             while(result.next()) {
-                String nameStudent, lastNameStudent, nameSubject;
+                int studentId, subjectId;
+                String studentName, studentLastName, subject;
                 Date startDate, endDate;
                 
-                nameStudent = result.getString("Alumno.Nombre");
-                lastNameStudent = result.getString("Alumno.Apellidos");
-                nameSubject = result.getString("Asignatura");
+                studentId = result.getInt("studentId");
+                studentName = result.getString("Alumno.Nombre");
+                studentLastName = result.getString("Alumno.Apellidos");
+                subjectId = result.getInt("subjectId");
+                subject = result.getString("Asignatura");
                 startDate = result.getDate("Matricula.fecha_inicio");
                 endDate = result.getDate("Matricula.fecha_fin");
                 
-                EnrollmentOutputDTO enrollmentOut = new EnrollmentOutputDTO(nameStudent, lastNameStudent, nameSubject, startDate, endDate);
+                enrollmentOut = new EnrollmentOutputDTO(studentId, studentName, studentLastName, subjectId, subject, startDate, endDate);
                 listEnrollment.add(enrollmentOut);
             }
         } catch (SQLException ex) {

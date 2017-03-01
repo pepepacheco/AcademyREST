@@ -11,10 +11,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class EnrollmentOutputDTO {
     @XmlElement
+    private int studentId;
+    
+    @XmlElement
     private String studentName;
     
     @XmlElement
     private String studentLastName;
+    
+    @XmlElement
+    private int subjectId;
     
     @XmlElement
     private String subject;
@@ -27,14 +33,24 @@ public class EnrollmentOutputDTO {
     
     public EnrollmentOutputDTO() {}
     
-    public EnrollmentOutputDTO(String nameStudent, String lastNameStudent, String nameSubject, Date startDate, Date endDate) {
+    public EnrollmentOutputDTO(int studentId, String nameStudent, String lastNameStudent, int subjectId, String nameSubject, Date startDate, Date endDate) {
+        this.studentId = studentId;
         this.studentName = nameStudent;
         this.studentLastName = lastNameStudent;
+        this.subjectId = subjectId;
         this.subject = nameSubject;
         this.startDate = startDate;
         this.endDate = endDate;
     }
 
+    public int getStudentId() {
+        return studentId;
+    }
+
+    public int getSubjectId() {
+        return subjectId;
+    }
+    
     public Date getEndDate() {
         return endDate;
     }

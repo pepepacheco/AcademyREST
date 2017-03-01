@@ -15,6 +15,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class SubjectDTO {
     @XmlElement
+    private int id;
+    @XmlElement
     private String name;
     @XmlElement
     private String cycle;
@@ -25,11 +27,16 @@ public class SubjectDTO {
     
     public SubjectDTO(){};
     
-    public SubjectDTO(String name, String cycle, String course, int hours){
+    public SubjectDTO(int id, String name, String cycle, String course, int hours){
+        this.id = id;
         this.name = name;
         this.cycle = cycle;
         this.course = course;
         this.hours = hours;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getCourse() {

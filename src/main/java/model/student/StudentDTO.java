@@ -10,6 +10,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class StudentDTO {
     @XmlElement
+    private int id;
+    
+    @XmlElement
     private String dni;
     
     @XmlElement
@@ -23,11 +26,16 @@ public class StudentDTO {
     
     public StudentDTO(){}
 
-    public StudentDTO (String dni, String name, String lastName, String eMail) {
+    public StudentDTO (int id, String dni, String name, String lastName, String eMail) {
+        this.id = id;
         this.dni = dni;
         this.name = name;
         this.lastName = lastName;
         this.eMail = eMail;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getDni() {

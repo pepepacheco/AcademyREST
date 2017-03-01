@@ -37,15 +37,16 @@ public class SubjectImpDAO implements SubjectDAO {
                
             SubjectDTO subject;
             while (result.next()) {
-                int hours;
+                int id, hours;
                 String name, cycle, course;
                 
+                id = result.getInt("ID");
                 name = result.getString("Nombre");
                 cycle = result.getString("Ciclo");
                 course = result.getString("Curso");
                 hours = result.getInt("Horas");
                 
-                subject = new SubjectDTO(name, cycle, course, hours);
+                subject = new SubjectDTO(id, name, cycle, course, hours);
                 listSubjects.add(subject);
             }
         } catch (SQLException ex) {
@@ -66,15 +67,16 @@ public class SubjectImpDAO implements SubjectDAO {
                
             SubjectDTO subject;
             while (result.next()) {
-                int hours;
+                int id, hours;
                 String name, cycle, course;
                 
+                id = result.getInt("ID");
                 name = result.getString("Nombre");
                 cycle = result.getString("Ciclo");
                 course = result.getString("Curso");
                 hours = result.getInt("Horas");
                 
-                subject = new SubjectDTO(name, cycle, course, hours);
+                subject = new SubjectDTO(id, name, cycle, course, hours);
                 listSubjects.add(subject);
             }
         } catch (SQLException ex) {
@@ -94,15 +96,16 @@ public class SubjectImpDAO implements SubjectDAO {
                
             SubjectDTO subject;
             while (result.next()) {
-                int hours;
+                int id, hours;
                 String name, cycle, course;
                 
+                id = result.getInt("ID");
                 name = result.getString("Nombre");
                 cycle = result.getString("Ciclo");
                 course = result.getString("Curso");
                 hours = result.getInt("Horas");
                 
-                subject = new SubjectDTO(name, cycle, course, hours);
+                subject = new SubjectDTO(id, name, cycle, course, hours);
                 listSubjects.add(subject);
             }
         } catch (SQLException ex) {
@@ -122,15 +125,16 @@ public class SubjectImpDAO implements SubjectDAO {
                
             SubjectDTO subject;
             while (result.next()) {
-                int hours;
+                int id, hours;
                 String name, cycle, course;
                 
+                id = result.getInt("ID");
                 name = result.getString("Nombre");
                 cycle = result.getString("Ciclo");
                 course = result.getString("Curso");
                 hours = result.getInt("Horas");
                 
-                subject = new SubjectDTO(name, cycle, course, hours);
+                subject = new SubjectDTO(id, name, cycle, course, hours);
                 listSubjects.add(subject);
             }
         } catch (SQLException ex) {
